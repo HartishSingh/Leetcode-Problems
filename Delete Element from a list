@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   
+    int N, delete_value, i, j;
+    scanf("%d", &N);
+    int arr[N];
+   
+    for (i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    scanf("%d", &delete_value);
+
+    for (i = 0; i < N; i++) {
+        if (arr[i] == delete_value) {
+            for (j = i; j < N - 1; j++) {
+                arr[j] = arr[j + 1];
+            }
+            N--;
+            break;
+        }
+    }
+
+    for (i = 0; i < N; i++) {
+        printf("%d", arr[i]);
+        if (i != N - 1) {
+            printf(" ");
+        }
+    }
+   
+   
+
+
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
